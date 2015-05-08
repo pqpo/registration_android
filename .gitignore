@@ -31,3 +31,5 @@ proguard/
 /*.classpath
 /proguard-project.txt
 /project.properties
+/proguard-project.txt
+/project.properties
