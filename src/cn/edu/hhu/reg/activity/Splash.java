@@ -3,10 +3,13 @@ package cn.edu.hhu.reg.activity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.Animation.AnimationListener;
+import cn.edu.hhu.reg.AppConfig;
+import cn.edu.hhu.reg.AppContext;
 import cn.edu.hhu.reg.R;
 
 /**
@@ -30,6 +33,8 @@ public class Splash extends Activity{
 		aa.setAnimationListener(new AnimationListener() {
 			@Override
 			public void onAnimationStart(Animation arg0) {
+				AppContext.isLoginSuccess = AppConfig.getAppConfig().getLoginTag(Splash.this);
+				if(AppContext.isDebug)Log.d("IsLoginSuccess", AppContext.isLoginSuccess+"");
 			}
 			@Override
 			public void onAnimationRepeat(Animation arg0) {

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:id="@+id/rl_top"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/activity_header_height"
+        android:background="@color/blue" >
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="@dimen/activity_header_gobackbutton_dimens"
+            android:layout_height="@dimen/activity_header_gobackbutton_dimens"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/gobackbtn" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="10dp"
+            android:text="@string/login"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/login_tv_register"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:padding="3dp"
+            android:gravity="center"
+            android:text="@string/register"
+            android:textColor="@color/white" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/rl_top" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <EditText
+                android:id="@+id/login_et_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:background="@null"
+                android:hint="@string/input_email"
+                android:inputType="textEmailAddress"
+                android:maxLength="20"
+                android:textSize="20sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#AAA" />
+
+            <EditText
+                android:id="@+id/login_et_userPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:background="@null"
+                android:hint="@string/input_password"
+                android:inputType="textPassword"
+                android:selectAllOnFocus="true"
+                android:textSize="20sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#AAA" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp" >
+
+                <ToggleButton
+                    android:id="@+id/login_tb_rememberPassword"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:background="@android:color/transparent"
+                    android:button="@drawable/toggle_btn"
+                    android:text="@string/remember_password"
+                    android:textOff=""
+                    android:textOn="" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/login_tb_rememberPassword"
+                    android:text="@string/remember_password"
+                    android:textColor="#666"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/login_btn_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/blue_button_selector"
+                android:gravity="center"
+                android:paddingBottom="15dp"
+                android:paddingTop="15dp"
+                android:text="@string/login"
+                android:textColor="#ffffff"
+                android:textSize="25sp" />
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

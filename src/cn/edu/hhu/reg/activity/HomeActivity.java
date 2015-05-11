@@ -1,9 +1,12 @@
 package cn.edu.hhu.reg.activity;
 
+import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.GridView;
 import cn.edu.hhu.reg.R;
 import cn.edu.hhu.reg.adapter.HospitalHomeGridViewAdapter;
-import android.os.Bundle;
-import android.widget.GridView;
 
 public class HomeActivity extends BaseActivity {
 	
@@ -31,6 +34,28 @@ public class HomeActivity extends BaseActivity {
 		setContentView(R.layout.activity_home);
 		gv = (GridView) findViewById(R.id.home_gv);
 		gv.setAdapter(new HospitalHomeGridViewAdapter(gridViewImage, gridViewText, this));
-		gv.setOnItemClickListener(null);
+		gv.setOnItemClickListener(new OnItemClickListener() {
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view,
+					int position, long id) {
+				switch (position) {
+				case 0://找科室
+					break;
+				case 1://找医生
+					break;
+				case 2://公告资讯
+					break;
+				case 3://医疗百科
+					break;
+				case 4://我的预约
+					break;
+				case 5://个人中心
+					UiHelper.profile(HomeActivity.this);
+					break;
+				default:
+					break;
+				}
+			}
+		});
 	}
 }

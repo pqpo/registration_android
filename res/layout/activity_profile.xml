@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:id="@+id/rl_top"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/activity_header_height"
+        android:background="@color/blue" >
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="@dimen/activity_header_gobackbutton_dimens"
+            android:layout_height="@dimen/activity_header_gobackbutton_dimens"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/gobackbtn" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="10dp"
+            android:text="个人中心"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+        
+        <TextView
+            android:id="@+id/profile_tv_logout"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:padding="3dp"
+            android:gravity="center"
+            android:text="退出登录"
+            android:textColor="@color/white" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/rl_top" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/gray_light"
+                android:gravity="left"
+                android:padding="10dp"
+                android:text="邮箱："
+                android:textSize="20sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#AAA" />
+
+            <EditText
+                android:id="@+id/profile_et_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@null"
+                android:hint=""
+                android:focusableInTouchMode="false"
+                android:focusable="false"
+                android:inputType="textEmailAddress"
+                android:maxLength="20"
+                android:textSize="20sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#AAA" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/gray_light"
+                android:gravity="left"
+                android:padding="10dp"
+                android:text="姓名："
+                android:textSize="20sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#AAA" />
+
+            <EditText
+                android:id="@+id/profile_et_nickname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@null"
+                android:hint=""
+                android:maxLength="20"
+                android:textSize="20sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#AAA" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/gray_light"
+                android:gravity="left"
+                android:padding="10dp"
+                android:text="年龄："
+                android:textSize="20sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#AAA" />
+
+            <EditText
+                android:id="@+id/profile_et_age"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@null"
+                android:hint=""
+                android:inputType="number"
+                android:maxLength="20"
+                android:textSize="20sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#AAA" />
+            
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/gray_light"
+                android:gravity="left"
+                android:padding="10dp"
+                android:text="性别："
+                android:textSize="20sp" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#AAA" />
+            <RadioGroup 
+                android:id="@+id/profile_rg_gender"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:paddingLeft="30dp"
+                android:paddingRight="30dp"
+                android:orientation="horizontal">
+                	<RadioButton 
+                	    android:id="@+id/profile_rb_female"
+                	    android:layout_height="wrap_content"
+                	    android:layout_width="0dp"
+                	    android:layout_weight="1"
+                	    android:gravity="center"
+                	    android:text="女"
+                	    android:padding="10dp"
+                	    android:textColor="@color/home_tab_text_nomal"
+                	    />
+                	<RadioButton 
+                	     android:id="@+id/profile_rb_male"
+                	    android:layout_height="wrap_content"
+                	    android:layout_width="0dp"
+                	    android:layout_weight="1"
+                	     android:gravity="center"
+                	      android:padding="10dp"
+                	      android:textColor="@color/home_tab_text_nomal"
+                	    android:text="男"
+                	    />
+                
+            </RadioGroup>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#AAA" />
+
+            <Button
+                android:id="@+id/profile_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/blue_button_selector"
+                android:gravity="center"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                android:text="修改"
+                android:textColor="#ffffff"
+                android:textSize="20sp" />
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

@@ -1,25 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="white">#f5f7fa</color>
+    <color name="black">#323a54</color>
+    <color name="transparent">#00ffffff</color>
+    
+    <color name="gray">#c9c9c9</color>
+    <color name="gray_light">#55c9c9c9</color>
+    
     <color name="blue">#409be4</color>
-    <color name="blue_border">#0b76cc</color>
-    <color name="white">#fff</color>
-    <color name="gray">#f6f5f1</color>
-    <color name="dark_gray">#e1e1e1</color>
-    <color name="dim_gray">#e1e1e1</color>
+    <color name="blue_light">#a8d1f1</color>
+    <color name="blue_dark">#0f69b2</color>
+    
     <color name="orange">#e27000</color>
-	<color name="dark_orange">#bf6002</color>
-	<color name="green">#55C64F</color>
-	<color name="light_brown">#CFAB74</color>
-	<color name="light_blue">#c3e1f9</color>
-	<color name="light_dark_blue">#5d9dd4</color>
-	<color name="light_gray">#F3F3F3</color>
-    <color name="red">#FF7256</color>
-    <color name="transparent">#00000000</color>
-    <color name="text_color_main">#5d5d5d</color>
-    <color name="dark_blue">#355e7f</color>
-    <color name="backgroud_color">#f8f8f8</color>
-    <color name="bark_gray_lighter">#EEEEEE</color>
-    <color name="bark_gray_light">#E0E0E0</color>
-    <color name="text_default">#6B6B6B</color>
-    <color name="red_light">#FF7256</color>
+    <color name="orange_dark">#bf6002</color>
+    
+    <color name="green">#55C64F</color>
+    <color name="green_dark">#44b03c</color>
+    
+    <color name="home_root_view_bg">#e6e9ed</color>
+    <color name="home_tab_text_nomal">#656d78</color>
+    
+    <!-- 随机颜色 -->
+    <color name="grapefruit">#ed5565</color>
+    <color name="bittersweet">#fc6e51</color>
+    <color name="sunflower">#f6bb42</color>
+    <color name="grass">#8cc152</color>
+    <color name="lavander">#ac92ec</color>
 </resources>

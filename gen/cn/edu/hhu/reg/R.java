@@ -8,89 +8,123 @@
 package cn.edu.hhu.reg;
 
 public final class R {
+    public static final class anim {
+        public static final int loading_anim=0x7f040000;
+    }
     public static final class attr {
     }
     public static final class color {
-        public static final int backgroud_color=0x7f040011;
-        public static final int bark_gray_light=0x7f040013;
-        public static final int bark_gray_lighter=0x7f040012;
-        public static final int blue=0x7f040000;
-        public static final int blue_border=0x7f040001;
-        public static final int dark_blue=0x7f040010;
-        public static final int dark_gray=0x7f040004;
-        public static final int dark_orange=0x7f040007;
-        public static final int dim_gray=0x7f040005;
-        public static final int gray=0x7f040003;
-        public static final int green=0x7f040008;
-        public static final int light_blue=0x7f04000a;
-        public static final int light_brown=0x7f040009;
-        public static final int light_dark_blue=0x7f04000b;
-        public static final int light_gray=0x7f04000c;
-        public static final int orange=0x7f040006;
-        public static final int red=0x7f04000d;
-        public static final int red_light=0x7f040015;
-        public static final int text_color_main=0x7f04000f;
-        public static final int text_default=0x7f040014;
-        public static final int transparent=0x7f04000e;
-        public static final int white=0x7f040002;
+        public static final int bittersweet=0x7f05000f;
+        public static final int black=0x7f050001;
+        public static final int blue=0x7f050005;
+        public static final int blue_dark=0x7f050007;
+        public static final int blue_light=0x7f050006;
+        /**  随机颜色 
+         */
+        public static final int grapefruit=0x7f05000e;
+        public static final int grass=0x7f050011;
+        public static final int gray=0x7f050003;
+        public static final int gray_light=0x7f050004;
+        public static final int green=0x7f05000a;
+        public static final int green_dark=0x7f05000b;
+        public static final int home_root_view_bg=0x7f05000c;
+        public static final int home_tab_text_nomal=0x7f05000d;
+        public static final int lavander=0x7f050012;
+        public static final int orange=0x7f050008;
+        public static final int orange_dark=0x7f050009;
+        public static final int sunflower=0x7f050010;
+        public static final int transparent=0x7f050002;
+        public static final int white=0x7f050000;
     }
     public static final class dimen {
-        public static final int activity_header_gobackbutton_dimens=0x7f050003;
-        public static final int activity_header_gotobutton_dimens=0x7f050004;
-        public static final int activity_header_height=0x7f050002;
+        public static final int activity_header_gobackbutton_dimens=0x7f060003;
+        public static final int activity_header_gotobutton_dimens=0x7f060004;
+        public static final int activity_header_height=0x7f060002;
         /**  Default screen margins, per the Android Design guidelines. 
          */
-        public static final int activity_horizontal_margin=0x7f050000;
-        public static final int activity_vertical_margin=0x7f050001;
-        public static final int shadow_width=0x7f050006;
-        public static final int slidingmenu_offset=0x7f050005;
+        public static final int activity_horizontal_margin=0x7f060000;
+        public static final int activity_vertical_margin=0x7f060001;
+        public static final int shadow_width=0x7f060006;
+        public static final int slidingmenu_offset=0x7f060005;
     }
     public static final class drawable {
         public static final int appicon=0x7f020000;
-        public static final int homeimage=0x7f020001;
-        public static final int hospital_account=0x7f020002;
-        public static final int hospital_department=0x7f020003;
-        public static final int hospital_doctor=0x7f020004;
-        public static final int hospital_introduce=0x7f020005;
-        public static final int hospital_myreg=0x7f020006;
-        public static final int hospital_wiki=0x7f020007;
-        public static final int ic_launcher=0x7f020008;
-        public static final int selector_griditem=0x7f020009;
-        public static final int shape_home_tab_shadow=0x7f02000a;
-        public static final int splash=0x7f02000b;
+        public static final int blue_button_selector=0x7f020001;
+        public static final int gobackbtn=0x7f020002;
+        public static final int homeimage=0x7f020003;
+        public static final int hospital_account=0x7f020004;
+        public static final int hospital_department=0x7f020005;
+        public static final int hospital_doctor=0x7f020006;
+        public static final int hospital_introduce=0x7f020007;
+        public static final int hospital_myreg=0x7f020008;
+        public static final int hospital_wiki=0x7f020009;
+        public static final int ic_launcher=0x7f02000a;
+        public static final int loading=0x7f02000b;
+        public static final int logo=0x7f02000c;
+        public static final int selector_griditem=0x7f02000d;
+        public static final int shape_home_tab_shadow=0x7f02000e;
+        public static final int splash=0x7f02000f;
+        public static final int toggle_btn=0x7f020010;
+        public static final int toggle_btn_checked=0x7f020011;
+        public static final int toggle_btn_unchecked=0x7f020012;
     }
     public static final class id {
-        public static final int home_gv=0x7f080000;
-        public static final int item_hospital_gv_iv=0x7f080001;
-        public static final int item_hospital_gv_tv=0x7f080002;
+        public static final int dialog_view=0x7f090018;
+        public static final int home_gv=0x7f090000;
+        public static final int item_hospital_gv_iv=0x7f090016;
+        public static final int item_hospital_gv_tv=0x7f090017;
+        public static final int iv_back=0x7f090002;
+        public static final int iv_coustomprogress=0x7f090019;
+        public static final int login_btn_login=0x7f090007;
+        public static final int login_et_email=0x7f090004;
+        public static final int login_et_userPassword=0x7f090005;
+        public static final int login_tb_rememberPassword=0x7f090006;
+        public static final int login_tv_register=0x7f090003;
+        public static final int profile_btn=0x7f09000f;
+        public static final int profile_et_age=0x7f09000b;
+        public static final int profile_et_email=0x7f090009;
+        public static final int profile_et_nickname=0x7f09000a;
+        public static final int profile_rb_female=0x7f09000d;
+        public static final int profile_rb_male=0x7f09000e;
+        public static final int profile_rg_gender=0x7f09000c;
+        public static final int profile_tv_logout=0x7f090008;
+        public static final int register_btn_register=0x7f090013;
+        public static final int register_et_email=0x7f090010;
+        public static final int register_et_userPassword=0x7f090011;
+        public static final int register_et_userPassword2=0x7f090012;
+        public static final int rl_top=0x7f090001;
+        public static final int tv_coustomprogress_loadingmsg=0x7f09001a;
+        public static final int webview=0x7f090015;
+        public static final int webview_tv_title=0x7f090014;
     }
     public static final class layout {
         public static final int activity_home=0x7f030000;
-        public static final int activity_splash=0x7f030001;
-        public static final int item_hospital_gridview=0x7f030002;
+        public static final int activity_login=0x7f030001;
+        public static final int activity_profile=0x7f030002;
+        public static final int activity_register=0x7f030003;
+        public static final int activity_splash=0x7f030004;
+        public static final int activity_webview=0x7f030005;
+        public static final int item_hospital_gridview=0x7f030006;
+        public static final int widget_progress_dialog=0x7f030007;
     }
     public static final class string {
-        public static final int app_name=0x7f060000;
+        public static final int app_name=0x7f070000;
+        public static final int input_email=0x7f070002;
+        public static final int input_password=0x7f070003;
+        public static final int input_password2=0x7f070004;
+        public static final int login=0x7f070001;
+        public static final int register=0x7f070006;
+        public static final int remember_password=0x7f070005;
     }
     public static final class style {
         /** 
-        Base application theme, dependent on API level. This theme is replaced
-        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
-    
-
-            Theme customizations available in newer API levels can go in
-            res/values-vXX/styles.xml, while customizations related to
-            backward-compatibility can go here.
-        
-
         Base application theme for API 11+. This theme completely replaces
         AppBaseTheme from res/values/styles.xml on API 11+ devices.
     
  API 11 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f070000;
-        /**  Application theme. 
-         */
-        public static final int AppTheme=0x7f070001;
+        public static final int AppBaseTheme=0x7f080002;
+        public static final int AppTheme=0x7f080000;
+        public static final int loading_dialog=0x7f080001;
     }
 }
