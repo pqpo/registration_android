@@ -34,7 +34,7 @@ public class ProfileActivity extends BaseActivity implements OnClickListener {
 	EditText et_nickname;
 	EditText et_age;
 	RadioGroup rg_gender;
-	Button btn;
+	Button btn_modify,btn_resetPassword;
 
 	CustomProgressDialog progresDialog;
 
@@ -66,7 +66,9 @@ public class ProfileActivity extends BaseActivity implements OnClickListener {
 				}
 			}
 		});
-		btn = (Button) findViewById(R.id.profile_btn);
+		btn_modify = (Button) findViewById(R.id.profile_btn_modify);
+		btn_resetPassword = (Button) findViewById(R.id.profile_btn_reset_password);
+		
 		findViewById(R.id.profile_tv_logout).setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -79,7 +81,8 @@ public class ProfileActivity extends BaseActivity implements OnClickListener {
 		et_email.setKeyListener(null);
 		setEditable(false);
 		et_email.setKeyListener(null);
-		btn.setOnClickListener(this);
+		btn_modify.setOnClickListener(this);
+		btn_resetPassword.setOnClickListener(this);
 		getProfile();
 
 	}
@@ -153,14 +156,16 @@ public class ProfileActivity extends BaseActivity implements OnClickListener {
 
 	@Override
 	public void onClick(View v) {
-		if(v==btn){
+		if(v==btn_modify){
 			if(status==SHOW){
 				setEditable(true);
-				btn.setText("保存");
+				btn_modify.setText("保存");
 				status = MODIFY;
 			}else if(status==MODIFY){
 				updateUserProfile();
 			}
+		}else if(v==btn_resetPassword){
+			UiHelper.resetPassword(ProfileActivity.this);
 		}
 	}
 	private void updateUserProfile() {
@@ -198,7 +203,7 @@ public class ProfileActivity extends BaseActivity implements OnClickListener {
 				if(response.isSuccess()){
 					ToastShow.shortT("修改成功！");
 					setEditable(false);
-					btn.setText("修改");
+					btn_modify.setText("修改");
 					status=SHOW;
 				}else{
 					String message = response.getMessage();

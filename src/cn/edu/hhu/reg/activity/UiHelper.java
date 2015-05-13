@@ -2,6 +2,8 @@ package cn.edu.hhu.reg.activity;
 
 import cn.edu.hhu.reg.AppContext;
 import cn.edu.hhu.reg.R;
+import cn.edu.hhu.reg.common.ToastShow;
+import cn.edu.hhu.reg.entity.Doctor;
 import android.app.Activity;
 import android.content.Intent;
 import android.view.View;
@@ -53,12 +55,76 @@ public class UiHelper {
 	}
 	
 	/**
+	 * 科室列表
+	 * @param ac
+	 */
+	public static void departmentList(Activity ac){
+		Intent intent = new Intent();
+		intent.setClass(ac, DepartmentListActivity.class);
+		ac.startActivity(intent);
+	}
+	
+	/**
+	 * 医生列表
+	 * @param ac
+	 * @param department
+	 */
+	public static void doctorList(Activity ac,String department){
+		Intent intent = new Intent();
+		intent.putExtra("department", department);
+		intent.setClass(ac, DoctorListActivity.class);
+		ac.startActivity(intent);
+	}
+	
+	/**
+	 * 医生页面
+	 * @param ac
+	 * @param doctor
+	 */
+	public static void doctorPage(Activity ac,Doctor doctor){
+		Intent intent = new Intent();
+		intent.putExtra("doctor", doctor);
+		intent.setClass(ac, DoctorPageActicity.class);
+		ac.startActivity(intent);
+	}
+	
+	/**
+	 * 预约页面
+	 * @param ac
+	 * @param doctor
+	 */
+	public static void registration(Activity ac,Doctor doctor){
+		if(!AppContext.isLoginSuccess){
+			ToastShow.shortT("请先登录！");
+			return;
+		}
+		Intent intent = new Intent();
+		intent.putExtra("doctor", doctor);
+		intent.setClass(ac, RegistrationActivity.class);
+		ac.startActivity(intent);
+	}
+	
+	/**
 	 * 注册
 	 * @param ac
 	 */
 	public static void register(Activity ac){
 		Intent intent = new Intent();
 		intent.setClass(ac, RegisterActivity.class);
+		ac.startActivity(intent);
+	}
+	
+	/**
+	 * 修改密码
+	 * @param ac
+	 */
+	public static void resetPassword(Activity ac){
+		if(!AppContext.isLoginSuccess){
+			ToastShow.shortT("请先登录！");
+			return;
+		}
+		Intent intent = new Intent();
+		intent.setClass(ac, ResetPasswordActivity.class);
 		ac.startActivity(intent);
 	}
 	

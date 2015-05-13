@@ -40,8 +40,10 @@ public class HomeActivity extends BaseActivity {
 					int position, long id) {
 				switch (position) {
 				case 0://找科室
+					UiHelper.departmentList(HomeActivity.this);
 					break;
 				case 1://找医生
+					UiHelper.doctorList(HomeActivity.this, null);
 					break;
 				case 2://公告资讯
 					break;

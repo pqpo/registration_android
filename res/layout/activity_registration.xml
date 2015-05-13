@@ -24,21 +24,10 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:layout_marginLeft="10dp"
-            android:text="个人中心"
+            android:text="挂号预约"
             android:textColor="@color/white"
             android:textSize="20sp" />
         
-        <TextView
-            android:id="@+id/profile_tv_logout"
-            android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="15dp"
-            android:padding="3dp"
-            android:gravity="center"
-            android:text="退出登录"
-            android:textColor="@color/white" />
     </RelativeLayout>
 
     <ScrollView
@@ -51,14 +40,14 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="vertical" >
-
-            <TextView
+            
+             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/gray_light"
                 android:gravity="left"
                 android:padding="10dp"
-                android:text="邮箱："
+                android:text="预约时间："
                 android:textSize="20sp" />
 
             <View
@@ -67,15 +56,13 @@
                 android:background="#AAA" />
 
             <EditText
-                android:id="@+id/profile_et_email"
+                android:id="@+id/registration_et_date"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:background="@null"
                 android:hint=""
-                android:focusableInTouchMode="false"
-                android:focusable="false"
-                android:inputType="textEmailAddress"
+                android:inputType="text|date"
                 android:maxLength="20"
                 android:textSize="20sp" />
 
@@ -83,7 +70,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="#AAA" />
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -99,7 +85,7 @@
                 android:background="#AAA" />
 
             <EditText
-                android:id="@+id/profile_et_nickname"
+                android:id="@+id/registration_et_nickname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -128,7 +114,7 @@
                 android:background="#AAA" />
 
             <EditText
-                android:id="@+id/profile_et_age"
+                android:id="@+id/registration_et_age"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -156,7 +142,7 @@
                 android:layout_height="1dp"
                 android:background="#AAA" />
             <RadioGroup 
-                android:id="@+id/profile_rg_gender"
+                android:id="@+id/registration_rg_gender"
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
                 android:layout_gravity="center"
@@ -164,7 +150,7 @@
                 android:paddingRight="30dp"
                 android:orientation="horizontal">
                 	<RadioButton 
-                	    android:id="@+id/profile_rb_female"
+                	    android:id="@+id/registration_rb_female"
                 	    android:layout_height="wrap_content"
                 	    android:layout_width="0dp"
                 	    android:layout_weight="1"
@@ -174,7 +160,7 @@
                 	    android:textColor="@color/home_tab_text_nomal"
                 	    />
                 	<RadioButton 
-                	     android:id="@+id/profile_rb_male"
+                	     android:id="@+id/registration_rb_male"
                 	    android:layout_height="wrap_content"
                 	    android:layout_width="0dp"
                 	    android:layout_weight="1"
@@ -185,35 +171,54 @@
                 	    />
                 
             </RadioGroup>
+            
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#AAA" />
+            
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/gray_light"
+                android:gravity="left"
+                android:padding="10dp"
+                android:text="症状描述："
+                android:textSize="20sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#AAA" />
+
+            <EditText
+                android:id="@+id/registration_et_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@null"
+                android:hint=""
+                android:inputType="textMultiLine"
+                android:textSize="20sp" />
+            
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="#AAA" />
 
             <Button
-                android:id="@+id/profile_btn_modify"
+                android:id="@+id/registration_btn_commit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/blue_button_selector"
                 android:gravity="center"
                 android:paddingBottom="10dp"
-                android:layout_marginTop="25dp"
+                android:layout_marginTop="15dp"
                 android:paddingTop="10dp"
-                android:text="修改信息"
+                android:text="提交"
                 android:textColor="#ffffff"
                 android:textSize="20sp" />
-            <Button
-                android:id="@+id/profile_btn_reset_password"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/blue_button_selector"
-                android:gravity="center"
-                android:paddingBottom="10dp"
-                android:paddingTop="10dp"
-                android:layout_marginTop="5dp"
-                android:text="修改密码"
-                android:textColor="#ffffff"
-                android:textSize="20sp" />
+
         </LinearLayout>
     </ScrollView>
 

@@ -2,7 +2,7 @@ package cn.edu.hhu.reg.entity;
 
 public class URLs {
 	
-	private static final String PATH = "http://192.168.1.111:8080/Registration";
+	private static final String PATH = "http://192.168.1.100:8080/Registration";
 	     
 	/**
 	 * 用户相关
