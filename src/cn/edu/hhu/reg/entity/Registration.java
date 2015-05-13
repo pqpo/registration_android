@@ -1,7 +1,14 @@
 package cn.edu.hhu.reg.entity;
 
+import java.io.Serializable;
 
-public class Registration {
+
+public class Registration implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	private Integer id;
 	
@@ -14,6 +21,8 @@ public class Registration {
 	 * 医生id
 	 */
 	private Integer doctorId;
+	private String doctorName;
+	private String departmentName;
 	
 	/**
 	 * 预约日期
@@ -130,4 +139,20 @@ public class Registration {
 		this.createTime = createTime;
 	}
 
+	public String getDoctorName() {
+		return doctorName;
+	}
+
+	public void setDoctorName(String doctorName) {
+		this.doctorName = doctorName;
+	}
+
+	public String getDepartmentName() {
+		return departmentName;
+	}
+
+	public void setDepartmentName(String departmentName) {
+		this.departmentName = departmentName;
+	}
+	
 }

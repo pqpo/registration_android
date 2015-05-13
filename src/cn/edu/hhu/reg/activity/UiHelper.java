@@ -4,6 +4,7 @@ import cn.edu.hhu.reg.AppContext;
 import cn.edu.hhu.reg.R;
 import cn.edu.hhu.reg.common.ToastShow;
 import cn.edu.hhu.reg.entity.Doctor;
+import cn.edu.hhu.reg.entity.Registration;
 import android.app.Activity;
 import android.content.Intent;
 import android.view.View;
@@ -101,6 +102,35 @@ public class UiHelper {
 		Intent intent = new Intent();
 		intent.putExtra("doctor", doctor);
 		intent.setClass(ac, RegistrationActivity.class);
+		ac.startActivity(intent);
+	}
+	
+	/**
+	 * 我的预约
+	 * @param ac
+	 */
+	public static void registrationMine(Activity ac){
+		if(!AppContext.isLoginSuccess){
+			ToastShow.shortT("请先登录！");
+			return;
+		}
+		Intent intent = new Intent();
+		intent.setClass(ac, RegistrationMineActivity.class);
+		ac.startActivity(intent);
+	}
+	
+	/**
+	 * 预约详细
+	 * @param ac
+	 */
+	public static void registrationDetail(Activity ac,Registration registration){
+		if(!AppContext.isLoginSuccess){
+			ToastShow.shortT("请先登录！");
+			return;
+		}
+		Intent intent = new Intent();
+		intent.putExtra("registration", registration);
+		intent.setClass(ac, RegistrationDetailActivity.class);
 		ac.startActivity(intent);
 	}
 	

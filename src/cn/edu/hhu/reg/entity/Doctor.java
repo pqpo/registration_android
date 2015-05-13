@@ -7,13 +7,15 @@ import java.io.Serializable;
  * @author qlm
  *
  */
-public class Doctor  implements Serializable{
+public class Doctor implements Serializable{
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private String id;
+
+	private Integer id;
+	
 	/**
 	 * 医生姓名
 	 */
@@ -32,7 +34,9 @@ public class Doctor  implements Serializable{
 	/**
 	 * 科室id
 	 */
-	private String departmentId;
+	private Integer departmentId;
+	
+	private String departmentName;
 	
 	/**
 	 * 介绍
@@ -50,11 +54,11 @@ public class Doctor  implements Serializable{
 	 */
 	private Integer status;
 	
-	public String getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
@@ -82,11 +86,11 @@ public class Doctor  implements Serializable{
 		this.gender = gender;
 	}
 	
-	public String getDepartmentId() {
+	public Integer getDepartmentId() {
 		return departmentId;
 	}
 
-	public void setDepartmentId(String departmentId) {
+	public void setDepartmentId(Integer departmentId) {
 		this.departmentId = departmentId;
 	}
 
@@ -113,5 +117,16 @@ public class Doctor  implements Serializable{
 	public void setStatus(Integer status) {
 		this.status = status;
 	}
+	
+	public String getDepartmentName() {
+		return departmentName;
+	}
 
+	public void setDepartmentName(String departmentName) {
+		this.departmentName = departmentName;
+	}
+
+	public Doctor() {
+	}
+	
 }

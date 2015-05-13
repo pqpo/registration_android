@@ -27,8 +27,13 @@
             android:text="挂号预约"
             android:textColor="@color/white"
             android:textSize="20sp" />
-        
     </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_below="@id/rl_top"
+        android:background="@drawable/shape_home_tab_shadow" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -40,8 +45,8 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="vertical" >
-            
-             <TextView
+
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/gray_light"
@@ -70,6 +75,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="#AAA" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -128,7 +134,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="#AAA" />
-            
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -137,46 +143,47 @@
                 android:padding="10dp"
                 android:text="性别："
                 android:textSize="20sp" />
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="#AAA" />
-            <RadioGroup 
+
+            <RadioGroup
                 android:id="@+id/registration_rg_gender"
-                android:layout_height="wrap_content"
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:orientation="horizontal"
                 android:paddingLeft="30dp"
-                android:paddingRight="30dp"
-                android:orientation="horizontal">
-                	<RadioButton 
-                	    android:id="@+id/registration_rb_female"
-                	    android:layout_height="wrap_content"
-                	    android:layout_width="0dp"
-                	    android:layout_weight="1"
-                	    android:gravity="center"
-                	    android:text="女"
-                	    android:padding="10dp"
-                	    android:textColor="@color/home_tab_text_nomal"
-                	    />
-                	<RadioButton 
-                	     android:id="@+id/registration_rb_male"
-                	    android:layout_height="wrap_content"
-                	    android:layout_width="0dp"
-                	    android:layout_weight="1"
-                	     android:gravity="center"
-                	      android:padding="10dp"
-                	      android:textColor="@color/home_tab_text_nomal"
-                	    android:text="男"
-                	    />
-                
+                android:paddingRight="30dp" >
+
+                <RadioButton
+                    android:id="@+id/registration_rb_female"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="女"
+                    android:textColor="@color/home_tab_text_nomal" />
+
+                <RadioButton
+                    android:id="@+id/registration_rb_male"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="男"
+                    android:textColor="@color/home_tab_text_nomal" />
             </RadioGroup>
-            
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="#AAA" />
-            
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -200,7 +207,7 @@
                 android:hint=""
                 android:inputType="textMultiLine"
                 android:textSize="20sp" />
-            
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
@@ -210,15 +217,14 @@
                 android:id="@+id/registration_btn_commit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
                 android:background="@drawable/blue_button_selector"
                 android:gravity="center"
                 android:paddingBottom="10dp"
-                android:layout_marginTop="15dp"
                 android:paddingTop="10dp"
                 android:text="提交"
                 android:textColor="#ffffff"
                 android:textSize="20sp" />
-
         </LinearLayout>
     </ScrollView>
 

@@ -47,7 +47,7 @@ public class DoctorListViewAdapter extends BaseAdapter {
 			vh = (ViewHolder) convertView.getTag();
 		}
 		vh.tv_name.setText(list.get(position).getNickname());
-		vh.tv_department.setText(list.get(position).getDepartmentId());
+		vh.tv_department.setText(list.get(position).getDepartmentName());
 		return convertView;
 	}
 

@@ -40,6 +40,11 @@
             android:text="退出登录"
             android:textColor="@color/white" />
     </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_below="@id/rl_top"
+        android:background="@drawable/shape_home_tab_shadow" />
 
     <ScrollView
         android:layout_width="match_parent"

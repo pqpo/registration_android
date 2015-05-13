@@ -68,7 +68,7 @@ public class RegistrationActivity extends BaseActivity {
 
 	private void registration() {
 		String uid = AppConfig.getAppConfig().getLoginInfo(this).getUid();
-		String doctorId = doctor.getId();
+		String doctorId = doctor.getId()+"";
 		String date = et_date.getText().toString();
 		String name = et_name.getText().toString();
 		String ageStr = et_age.getText().toString();

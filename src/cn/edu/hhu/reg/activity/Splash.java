@@ -23,7 +23,7 @@ public class Splash extends Activity{
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		final View view = View.inflate(this, R.layout.activity_splash, null);
-		view.setBackgroundResource(R.drawable.splash);
+		view.setBackgroundResource(R.drawable.bg_splash);
 		setContentView(view);
 		
 		//设置动画

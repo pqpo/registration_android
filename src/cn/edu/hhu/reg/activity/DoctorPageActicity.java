@@ -26,7 +26,7 @@ public class DoctorPageActicity extends BaseActivity {
 		((TextView)findViewById(R.id.item_doctor_tv_name)).setText(doctor.getNickname());
 		((TextView)findViewById(R.id.item_doctor_tv_age)).setText(doctor.getAge()+"");
 		((TextView)findViewById(R.id.item_doctor_tv_gender)).setText(doctor.getGender()==1?"男":"女");
-		((TextView)findViewById(R.id.item_doctor_tv_department)).setText(doctor.getDepartmentId());
+		((TextView)findViewById(R.id.item_doctor_tv_department)).setText(doctor.getDepartmentName());
 		((TextView)findViewById(R.id.item_doctor_tv_description)).setText(doctor.getIntroduction());
 		((Button)findViewById(R.id.item_doctor_btn_registration)).setOnClickListener(new OnClickListener() {
 			@Override

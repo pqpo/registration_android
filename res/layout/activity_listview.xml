@@ -27,11 +27,16 @@
             android:textColor="@color/white"
             android:textSize="20sp" />
     </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_below="@id/rl_top"
+        android:background="@drawable/shape_home_tab_shadow" />
     <ListView 
         android:id="@+id/listview_lv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:divider="@color/white"
+        android:divider="@color/gray"
         android:dividerHeight="1dp"
          android:layoutAnimation="@anim/listview_ainm"
         ></ListView>
