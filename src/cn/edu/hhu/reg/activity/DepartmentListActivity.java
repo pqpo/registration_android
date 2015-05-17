@@ -1,6 +1,7 @@
 package cn.edu.hhu.reg.activity;
 
 import java.util.ArrayList;
+
 import cn.edu.hhu.reg.R;
 import cn.edu.hhu.reg.adapter.DepartmentListViewAdapter;
 import cn.edu.hhu.reg.api.ApiClient;
@@ -49,17 +50,21 @@ public class DepartmentListActivity extends BaseActivity {
 			@Override
 			protected void onSuccess(String json) {
 				progressDialog.dismiss();
-				SimpleResponse<ArrayList<Department>> departmentListResponse = ResponseUtils.departmentListResponse(json);
-				if(departmentListResponse.isSuccess()){
-					ArrayList<Department> list = departmentListResponse.getData();
-					DepartmentListViewAdapter adapter = new DepartmentListViewAdapter(list, DepartmentListActivity.this);
-					lv.setAdapter(adapter);
-				}else{
-					String msg = departmentListResponse.getMessage();
-					if(msg==null){
-						msg="";
+				try {
+					SimpleResponse<ArrayList<Department>> departmentListResponse = ResponseUtils.departmentListResponse(json);
+					if(departmentListResponse.isSuccess()){
+						ArrayList<Department> list = departmentListResponse.getData();
+						DepartmentListViewAdapter adapter = new DepartmentListViewAdapter(list, DepartmentListActivity.this);
+						lv.setAdapter(adapter);
+					}else{
+						String msg = departmentListResponse.getMessage();
+						if(msg==null){
+							msg="";
+						}
+						ToastShow.shortT("获取列表失败！"+msg);
 					}
-					ToastShow.shortT("获取列表失败！"+msg);
+				} catch (Exception e) {
+					ToastShow.shortT(e.getMessage());
 				}
 			}
 			

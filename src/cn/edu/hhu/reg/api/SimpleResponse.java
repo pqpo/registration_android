@@ -1,5 +1,6 @@
 package cn.edu.hhu.reg.api;
 
+
 public class SimpleResponse<T> {
 	private boolean success;
 	private String message;
@@ -23,5 +24,4 @@ public class SimpleResponse<T> {
 	public void setData(T data) {
 		this.data = data;
 	}
-	
 }

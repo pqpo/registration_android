@@ -99,16 +99,20 @@ public class ProfileActivity extends BaseActivity implements OnClickListener {
 			@Override
 			protected void onSuccess(String json) {
 				if(progresDialog!=null&&progresDialog.isShowing()) progresDialog.dismiss();
-				SimpleResponse<UserProfile> response = ResponseUtils.proflileResponse(json);
-				if(response.isSuccess()){
-					userProfile = response.getData();
-					showProfile();
-				}else{
-					String message = response.getMessage();
-					if(message==null){
-						message="";
+				try {
+					SimpleResponse<UserProfile> response = ResponseUtils.proflileResponse(json);
+					if(response.isSuccess()){
+						userProfile = response.getData();
+						showProfile();
+					}else{
+						String message = response.getMessage();
+						if(message==null){
+							message="";
+						}
+						ToastShow.shortT("获取用户信息失败！"+message);
 					}
-					ToastShow.shortT("获取用户信息失败！"+message);
+				} catch (Exception e) {
+					ToastShow.shortT(e.getMessage());
 				}
 			}
 
@@ -199,18 +203,22 @@ public class ProfileActivity extends BaseActivity implements OnClickListener {
 			@Override
 			protected void onSuccess(String json) {
 				if(progresDialog!=null&&progresDialog.isShowing()) progresDialog.dismiss();
-				SimpleResponse<UserProfile> response = ResponseUtils.proflileResponse(json);
-				if(response.isSuccess()){
-					ToastShow.shortT("修改成功！");
-					setEditable(false);
-					btn_modify.setText("修改");
-					status=SHOW;
-				}else{
-					String message = response.getMessage();
-					if(message==null){
-						message="";
+				try {
+					SimpleResponse<UserProfile> response = ResponseUtils.proflileResponse(json);
+					if(response.isSuccess()){
+						ToastShow.shortT("修改成功！");
+						setEditable(false);
+						btn_modify.setText("修改");
+						status=SHOW;
+					}else{
+						String message = response.getMessage();
+						if(message==null){
+							message="";
+						}
+						ToastShow.shortT("修改失败！"+message);
 					}
-					ToastShow.shortT("修改失败！"+message);
+				} catch (Exception e) {
+					ToastShow.shortT(e.getMessage());
 				}
 			}
 			

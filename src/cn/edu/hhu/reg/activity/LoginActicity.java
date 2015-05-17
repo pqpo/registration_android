@@ -73,28 +73,32 @@ public class LoginActicity extends BaseActivity {
 			@Override
 			protected void onSuccess(String json) {
 				if(progresDialog!=null&&progresDialog.isShowing()) progresDialog.dismiss();
-				SimpleResponse<UserLogin> loginResponse = ResponseUtils.loginResponse(json);
-				if(loginResponse.isSuccess()){
-					UserLogin userLogin = loginResponse.getData();
-					if(userLogin==null){
-						ToastShow.shortT("登录失败（无法获取用户信息）！");
-						return;
-					}
-					AppConfig.getAppConfig().setLoginInfo(LoginActicity.this, userLogin);
-					if(tb_rememberPassword.isChecked()){
-						AppConfig.getAppConfig().setLoginTag(LoginActicity.this, true);
+				try {
+					SimpleResponse<UserLogin> loginResponse = ResponseUtils.loginResponse(json);
+					if(loginResponse.isSuccess()){
+						UserLogin userLogin = loginResponse.getData();
+						if(userLogin==null){
+							ToastShow.shortT("登录失败（无法获取用户信息）！");
+							return;
+						}
+						AppConfig.getAppConfig().setLoginInfo(LoginActicity.this, userLogin);
+						if(tb_rememberPassword.isChecked()){
+							AppConfig.getAppConfig().setLoginTag(LoginActicity.this, true);
+						}else{
+							AppConfig.getAppConfig().setLoginTag(LoginActicity.this, false);
+						}
+						AppContext.isLoginSuccess = true;
+						ToastShow.shortT("登录成功！");
+						LoginActicity.this.finish();
 					}else{
-						AppConfig.getAppConfig().setLoginTag(LoginActicity.this, false);
+						String message = loginResponse.getMessage();
+						if(message==null){
+							message="";
+						}
+						ToastShow.shortT("登录失败！"+message);
 					}
-					AppContext.isLoginSuccess = true;
-					ToastShow.shortT("登录成功！");
-					LoginActicity.this.finish();
-				}else{
-					String message = loginResponse.getMessage();
-					if(message==null){
-						message="";
-					}
-					ToastShow.shortT("登录失败！"+message);
+				} catch (Exception e) {
+					ToastShow.shortT(e.getMessage());
 				}
 			}
 			@Override

@@ -51,19 +51,23 @@ public class DoctorListActivity extends BaseActivity {
 			@Override
 			protected void onSuccess(String json) {
 				progressDialog.dismiss();
-				SimpleResponse<ArrayList<Doctor>> response = ResponseUtils.doctorListResponse(json);
-				if(response.isSuccess()){
-					ArrayList<Doctor> list = response.getData();
-					if(list!=null&&!list.isEmpty()){
-						DoctorListViewAdapter  adapter = new DoctorListViewAdapter(list, DoctorListActivity.this);
-						lv.setAdapter(adapter);
+				try {
+					SimpleResponse<ArrayList<Doctor>> response = ResponseUtils.doctorListResponse(json);
+					if(response.isSuccess()){
+						ArrayList<Doctor> list = response.getData();
+						if(list!=null&&!list.isEmpty()){
+							DoctorListViewAdapter  adapter = new DoctorListViewAdapter(list, DoctorListActivity.this);
+							lv.setAdapter(adapter);
+						}
+					}else{
+						String msg = response.getMessage();
+						if(msg==null){
+							msg="";
+						}
+						ToastShow.shortT("获取列表失败！"+msg);
 					}
-				}else{
-					String msg = response.getMessage();
-					if(msg==null){
-						msg="";
-					}
-					ToastShow.shortT("获取列表失败！"+msg);
+				} catch (Exception e) {
+					ToastShow.shortT(e.getMessage());
 				}
 			}
 			

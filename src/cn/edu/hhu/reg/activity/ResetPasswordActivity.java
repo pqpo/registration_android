@@ -65,16 +65,20 @@ public class ResetPasswordActivity extends BaseActivity {
 			@Override
 			protected void onSuccess(String json) {
 				if(progressDialog!=null&&progressDialog.isShowing()) progressDialog.dismiss();
-				SimpleResponse<Object> response = ResponseUtils.SimpleResponse(json);
-				if(response.isSuccess()){
-					ToastShow.shortT("修改成功！");
-					ResetPasswordActivity.this.finish();
-				}else{
-					String msg = response.getMessage();
-					if(msg==null){
-						msg="";
+				try {
+					SimpleResponse<Object> response = ResponseUtils.SimpleResponse(json);
+					if(response.isSuccess()){
+						ToastShow.shortT("修改成功！");
+						ResetPasswordActivity.this.finish();
+					}else{
+						String msg = response.getMessage();
+						if(msg==null){
+							msg="";
+						}
+						ToastShow.shortT("修改失败！"+msg);
 					}
-					ToastShow.shortT("修改失败！"+msg);
+				} catch (Exception e) {
+					ToastShow.shortT(e.getMessage());
 				}
 			}
 			

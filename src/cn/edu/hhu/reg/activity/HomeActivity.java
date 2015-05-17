@@ -3,7 +3,6 @@ package cn.edu.hhu.reg.activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
 import cn.edu.hhu.reg.AppManager;

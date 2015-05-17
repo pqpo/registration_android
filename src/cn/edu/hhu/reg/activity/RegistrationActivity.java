@@ -1,6 +1,7 @@
 package cn.edu.hhu.reg.activity;
 
 import java.util.Calendar;
+
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.DatePickerDialog.OnDateSetListener;
@@ -110,16 +111,20 @@ public class RegistrationActivity extends BaseActivity {
 			
 			@Override
 			protected void onSuccess(String json) {
-				SimpleResponse<Registration> registrationResponse = ResponseUtils.registrationResponse(json);
-				if(registrationResponse.isSuccess()){
-					ToastShow.shortT("预约成功！");
-					RegistrationActivity.this.finish();
-				}else{
-					String message = registrationResponse.getMessage();
-					if(message==null){
-						message="";
+				try {
+					SimpleResponse<Registration> registrationResponse = ResponseUtils.registrationResponse(json);
+					if(registrationResponse.isSuccess()){
+						ToastShow.shortT("预约成功！");
+						RegistrationActivity.this.finish();
+					}else{
+						String message = registrationResponse.getMessage();
+						if(message==null){
+							message="";
+						}
+						ToastShow.longT("预约失败！"+message);
 					}
-					ToastShow.longT("预约失败！"+message);
+				} catch (Exception e) {
+					ToastShow.shortT(e.getMessage());
 				}
 			}
 			@Override

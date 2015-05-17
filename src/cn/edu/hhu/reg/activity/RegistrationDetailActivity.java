@@ -90,16 +90,20 @@ public class RegistrationDetailActivity extends BaseActivity {
 			@Override
 			protected void onSuccess(String json) {
 				progressDialog.dismiss();
-				SimpleResponse<Object> response = ResponseUtils.SimpleResponse(json);
-				if(response.isSuccess()){
-					ToastShow.longT("已取消！");
-					finish();
-				}else{
-					String msg = response.getMessage();
-					if(msg==null){
-						msg="";
+				try {
+					SimpleResponse<Object> response = ResponseUtils.SimpleResponse(json);
+					if(response.isSuccess()){
+						ToastShow.longT("已取消！");
+						finish();
+					}else{
+						String msg = response.getMessage();
+						if(msg==null){
+							msg="";
+						}
+						ToastShow.longT("取消失败！"+msg);
 					}
-					ToastShow.longT("取消失败！"+msg);
+				} catch (Exception e) {
+					ToastShow.shortT(e.getMessage());
 				}
 			}
 			@Override

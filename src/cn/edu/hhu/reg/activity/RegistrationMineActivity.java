@@ -1,6 +1,7 @@
 package cn.edu.hhu.reg.activity;
 
 import java.util.ArrayList;
+
 import cn.edu.hhu.reg.AppConfig;
 import cn.edu.hhu.reg.R;
 import cn.edu.hhu.reg.adapter.RegistrationListAdapter;
@@ -61,14 +62,18 @@ public class RegistrationMineActivity extends BaseActivity {
 			@Override
 			protected void onSuccess(String json) {
 				progressDialog.dismiss();
-				SimpleResponse<ArrayList<Registration>> response = ResponseUtils.registrationListResponse(json);
-				if(response.isSuccess()){
-					ArrayList<Registration> list = response.getData();
-					lv.setAdapter(new RegistrationListAdapter(list, RegistrationMineActivity.this));
-				}else{
-					String msg = response.getMessage();
-					if(msg==null) msg="";
-					ToastShow.shortT("获取列表失败！"+msg);
+				try {
+					SimpleResponse<ArrayList<Registration>> response = ResponseUtils.registrationListResponse(json);
+					if(response.isSuccess()){
+						ArrayList<Registration> list = response.getData();
+						lv.setAdapter(new RegistrationListAdapter(list, RegistrationMineActivity.this));
+					}else{
+						String msg = response.getMessage();
+						if(msg==null) msg="";
+						ToastShow.shortT("获取列表失败！"+msg);
+					}
+				} catch (Exception e) {
+					ToastShow.shortT(e.getMessage());
 				}
 			}
 

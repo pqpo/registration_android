@@ -69,16 +69,20 @@ public class RegisterActivity extends BaseActivity {
 			@Override
 			protected void onSuccess(String json) {
 				if(progresDialog!=null&&progresDialog.isShowing()) progresDialog.dismiss();
-				SimpleResponse<UserLogin> loginResponse = ResponseUtils.loginResponse(json);
-				if(loginResponse.isSuccess()){
-					ToastShow.shortT("注册成功！");
-					RegisterActivity.this.finish();
-				}else{
-					String message = loginResponse.getMessage();
-					if(message==null){
-						message="";
+				try {
+					SimpleResponse<UserLogin> loginResponse = ResponseUtils.loginResponse(json);
+					if(loginResponse.isSuccess()){
+						ToastShow.shortT("注册成功！");
+						RegisterActivity.this.finish();
+					}else{
+						String message = loginResponse.getMessage();
+						if(message==null){
+							message="";
+						}
+						ToastShow.shortT("注册失败！"+message);
 					}
-					ToastShow.shortT("注册失败！"+message);
+				} catch (Exception e) {
+					ToastShow.shortT(e.getMessage());
 				}
 			}
 			@Override
